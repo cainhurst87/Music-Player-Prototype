@@ -1,0 +1,323 @@
+
+:root{
+    --background: #000000;
+    --text-color: #c5c5c5;
+    --background-hover: #c5c5c5;
+    --text-color-hover: #000000;
+    --background-active: #c5c5c5;
+    --text-color-active: #c5c5c5;
+    --border-hover: #c5c5c5;
+    --transparent: #ffffff00;
+}
+
+[data-theme="dark"]{
+    --background: #c5c5c5;
+    --text-color: #000000;
+    --background-hover: #000000;
+    --text-color-hover: #c5c5c5;
+    --background-active: #000000;
+    --text-color-active: #c5c5c5;
+    --border-hover: #000000;
+    --transparent: #ffffff00;
+}
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 540px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: nunito;
+    color: var(--text-color);
+    object-fit: fill;
+    background-image: radial-gradient(circle, var(--transparent) 0%, var(--background) 80%), url(cover1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+button{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#container-all{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-main-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 60vh;
+    margin-top: 4vh;
+}
+
+
+/* Bordering Buttons*/
+#button-light-bg{
+    position: absolute;
+    top: 3%;
+    left: 94.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 4vh;
+    height: 4vh;
+    padding: 0.3vh;
+    border-radius: 50em;
+}
+
+#button-light{
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    width: 4vh;
+    height: 4vh;
+    padding: 0.3vh;
+    border-radius: 50em;
+}
+
+#button-light i{
+    font-size: 3vh;
+}
+
+#button-github{
+    position: absolute;
+    top: 90%;
+    left: 2%;
+    border: none;
+    border-radius: 50em;
+    color: var(--text-color);
+}
+
+#button-github i{
+    font-size: 5vh
+}
+
+#button-light:hover{
+    color: var(--text-color-hover);
+    background: var(--background-hover);
+}
+
+#button-light:active{
+    color: var(--text-color-active);
+    background: var(--background-active);
+}
+
+
+/*Top Buttons*/
+#top-button-row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+.top-button-row-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.5vh;
+    width: 4.5vh;
+    border-radius: 50%;
+}
+
+#top-button-row button{
+    border: 1px solid transparent; 
+    color: var(--text-color);
+    background: none;
+    height: 4.5vh;
+    width: 4.5vh;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#top-button-row i{
+    font-size: 3vh;
+}
+
+#top-button-row button:hover{
+    color: var(--text-color-hover);
+    background: var(--background-hover) ;
+}
+
+#top-button-row button:active{
+    color: var(--text-color-active);
+    background: var(--background-active);
+}
+
+
+/* Cover Image */
+#album-cover{
+    position: relative;
+    display: inline-block;
+}
+
+#album-cover img{
+    object-fit: fill;
+    display: block;
+    width: 60vh;
+    height: 45vh;
+    background: #000;
+    border-radius: 3vh 3vh 0 0;
+}
+
+#cover-gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff00 0%, var(--background) 99%);
+}
+
+
+/* Interaction Area */
+#outer-container-interaction-area{
+    width: 60vh;
+    height: 37vh;
+    background: var(--background);
+    border-radius: 0 0 3vh 3vh;
+    
+}
+
+#container-interaction-area{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    margin: 1vh auto;
+    width: 57vh;
+    height: 40vh;
+}
+
+#container-interaction-area span{
+    font-weight: bold;
+    max-width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Song Details */
+#song-artist, #album-title{
+    font-size: 1.7vh;
+    color: #666666;
+}
+
+#song-title{
+    font-size: 4vh;
+    margin-top: 0.5vh;
+}
+
+
+/* Song Time */
+#container-song-time{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+#container-song-time span{
+    font-size: 2vh;
+}   
+
+#song-progress{
+    width: 75%;
+}
+
+
+/* Song Volume */
+#container-song-volume{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 1vh;
+    margin-top: 2vh;
+}
+
+#button-mute{
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--background);
+    border-radius: 50em;
+}
+
+#button-mute i{
+    font-size: 3vh;
+}
+
+#button-mute:hover{
+    border: 1px solid var(--border-hover);
+}
+
+#button-mute:active{
+    color: var(--text-color-active);
+    background: var(--background-active);
+}
+
+
+/* Song Bottom Button Row */
+#container-song-bottom-button-row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4vh;
+    padding: 1vh 0;
+    width: 100%;
+}
+
+.bottom-button-row-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 7vh;
+    height: 7vh;
+    border: 1px solid var(--border-hover);
+    border-radius: 50%;
+}
+
+#container-song-bottom-button-row button{
+    border: none;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: 50%;
+    
+    height: 7vh;
+    width: 7vh;
+    transition: 0.3s;
+}
+
+#container-song-bottom-button-row i{
+    font-size: 4.5vh;
+}
+
+#container-song-bottom-button-row button:hover{
+    color: var(--text-color-hover);
+    background: var(--background-hover);
+}
+
+#container-song-bottom-button-row button:active{
+    color: var(--text-color-active);
+    background: var(--background-active);
+    border: 1px solid var(--border-hover);
+}
+

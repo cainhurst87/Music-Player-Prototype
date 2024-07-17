@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Music Player</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <div id="container-all"> 
+ 
+        <div id="button-light-bg">
+            <button id="button-light" onclick=""><i class="bi bi-sun"></i></button>
+        </div>
+
+        <a id="button-github" href="https://github.com/cainhurst87"><i class="bi bi-github"></i></a>    
+        
+        
+        <div id="container-main-content">
+
+            <div id="top-button-row">
+
+                <div class="top-button-row-bg">
+                    <button id="button-folder"><i class="bi bi-folder-plus"></i></button>
+                </div>
+
+                <div class="top-button-row-bg">
+                    <button id="button-setlist"><i class="bi bi-list"></i></button>
+                </div>
+
+            </div>
+
+            <div id="album-cover">
+                <img src="cover1.webp">
+                <div id="cover-gradient"></div>
+            </div>
+
+            <div id="outer-container-interaction-area">
+                <div id="container-interaction-area">
+
+                    <span id="song-artist">Pink Floyd</span><br>
+                    <span id="album-title">Animals</span><br>
+                    <span id="song-title">Dogs</span><br>
+                    
+                    <div id="container-song-time">
+                        <span id="song-runtime">00:00</span>
+                        <progress id="song-progress" max="100" value="70">70%</progress>
+                        <span id="song-total-time">04:30</span>
+                    </div>
+
+                    <div id="container-song-volume">
+                        <button id="button-mute"><i class="bi bi-volume-up"></i></button>
+                        <input type="range"  id="volume-progress" max="100" value="50">
+                    </div>
+
+                    <div id="container-song-bottom-button-row">
+
+                        <div class="bottom-button-row-bg">
+                            <button id="button-random"><i class="bi bi-shuffle"></i></button>
+                        </div>
+                        
+                        <div class="bottom-button-row-bg">
+                            <button id="button-previous"><i class="bi bi-arrow-left"></i></button>
+                        </div>
+
+                        <div class="bottom-button-row-bg">
+                            <button id="button-play/pause"><i class="bi bi-play-fill"></i></button>
+                        </div>
+
+                        <div class="bottom-button-row-bg">
+                            <button id="button-next"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+
+                        <div class="bottom-button-row-bg">
+                            <button id="button-replay"><i class="bi bi-arrow-repeat"></i></button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
