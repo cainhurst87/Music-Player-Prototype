@@ -1,23 +1,51 @@
 
 :root{
     --background: #000000;
-    --text-color: #c5c5c5;
+    --text-color: #ffffff;
+
     --background-hover: #c5c5c5;
     --text-color-hover: #000000;
+
     --background-active: #c5c5c5;
     --text-color-active: #c5c5c5;
+
+    --modal-text-color: #000000;
+    --modal-background: #c5c5c5;
+
+    --modal-text-hover: #c5c5c5;
+    --modal-background-hover: #000000;
+    
+    --modal-text-active: #000000;
+    --modal-background-active: #c5c5c5;
+
     --border-hover: #c5c5c5;
+
+    --song-progress: #e4af03;
+
     --transparent: #ffffff00;
 }
 
 [data-theme="dark"]{
     --background: #c5c5c5;
     --text-color: #000000;
+
     --background-hover: #000000;
     --text-color-hover: #c5c5c5;
+
     --background-active: #000000;
-    --text-color-active: #c5c5c5;
+    --text-color-active: #000000;
+
+    --modal-text-color: #c5c5c5;
+    --modal-background: #000000;
+
+    --modal-text-hover: #000000;
+    --modal-background-hover: #c5c5c5;
+    
+    --modal-text-active: #c5c5c5;
+    --modal-background-active: #c5c5c5;
+
     --border-hover: #000000;
+
     --transparent: #ffffff00;
 }
 
@@ -27,13 +55,12 @@ html, body{
     padding: 0;
     width: 100%;
     height: 100%;
-    min-width: 540px;
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: nunito;
     color: var(--text-color);
     object-fit: fill;
-    background-image: radial-gradient(circle, var(--transparent) 0%, var(--background) 80%), url(cover1.webp);
+    background-image: radial-gradient(circle, var(--transparent) 0%, var(--background) 80%), url(cover.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,32 +84,39 @@ button{
     justify-content: center;
     align-items: center;
     width: 60vh;
-    margin-top: 4vh;
+    margin-top: 10vh;
 }
 
 
 /* Bordering Buttons*/
 #button-light-bg{
-    position: absolute;
-    top: 3%;
-    left: 94.5%;
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: 4vh;
-    height: 4vh;
-    padding: 0.3vh;
-    border-radius: 50em;
+    
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
 }
 
 #button-light{
-    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: none;
     border: none;
     color: var(--text-color);
+
     width: 4vh;
     height: 4vh;
-    padding: 0.3vh;
-    border-radius: 50em;
+    padding: 2.3vh;
+    border-radius: 50%;
 }
 
 #button-light i{
@@ -108,51 +142,6 @@ button{
 }
 
 #button-light:active{
-    color: var(--text-color-active);
-    background: var(--background-active);
-}
-
-
-/*Top Buttons*/
-#top-button-row{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: start;
-    align-items: center;
-    gap: 0.5em;
-    width: 100%;
-    padding: 0.5em 0;
-}
-
-.top-button-row-bg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4.5vh;
-    width: 4.5vh;
-    border-radius: 50%;
-}
-
-#top-button-row button{
-    border: 1px solid transparent; 
-    color: var(--text-color);
-    background: none;
-    height: 4.5vh;
-    width: 4.5vh;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-#top-button-row i{
-    font-size: 3vh;
-}
-
-#top-button-row button:hover{
-    color: var(--text-color-hover);
-    background: var(--background-hover) ;
-}
-
-#top-button-row button:active{
     color: var(--text-color-active);
     background: var(--background-active);
 }
@@ -240,8 +229,15 @@ button{
 
 #song-progress{
     width: 75%;
+    height: 1vh;
+    cursor: pointer; 
+    background: var(--text-color);
+    border-radius: 50em;
 }
 
+#song-progress:focus{
+    outline: none;
+}
 
 /* Song Volume */
 #container-song-volume{
@@ -320,4 +316,69 @@ button{
     background: var(--background-active);
     border: 1px solid var(--border-hover);
 }
+
+/* Modal Menu*/
+.modal{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 52%;
+    left: 50%;
+    z-index: 100; 
+
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+
+    width: 58vh;
+    height: 80vh;
+    background: var(--modal-background);
+
+    border-radius: 3vh;
+    transition: all ease 0.5s;
+}
+
+#container-menu-modal{
+    display: none;
+}
+
+#bg-modal-button-close{
+    align-self: flex-end;
+    margin: 2vh 2vh 0 0;
+}
+
+#modal-button-close{
+    background: none;
+    color: var(--modal-text-color);
+    border: 1px solid var(--modal-text-color);
+    border-radius: 50em;
+}
+
+#modal-button-close i{
+    font-size: 3vh;
+}
+
+#modal-button-close:hover{
+    color: var(--modal-text-hover);
+    background: var(--modal-background-hover);
+}
+
+#modal-button-close:active{
+    color: var(--modal-text-active);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

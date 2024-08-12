@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offline Music Player</title>
+    <title>Music Player</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,39 +29,27 @@
         
         <div id="container-main-content">
 
-            <div id="top-button-row">
-
-                <div class="top-button-row-bg">
-                    <button id="button-folder"><i class="bi bi-folder-plus"></i></button>
-                </div>
-
-                <div class="top-button-row-bg">
-                    <button id="button-setlist"><i class="bi bi-list"></i></button>
-                </div>
-
-            </div>
-
             <div id="album-cover">
-                <img src="cover1.webp">
+                <img src="cover.jpg">
                 <div id="cover-gradient"></div>
             </div>
 
             <div id="outer-container-interaction-area">
                 <div id="container-interaction-area">
 
-                    <span id="song-artist">Pink Floyd</span><br>
-                    <span id="album-title">Animals</span><br>
-                    <span id="song-title">Dogs</span><br>
+                    <span id="song-artist">Queens Of The Stone Age</span><br>
+                    <span id="album-title">...Like Clockwork</span><br>
+                    <span id="song-title">Fairweather Friends</span><br>
                     
                     <div id="container-song-time">
-                        <span id="song-runtime">00:00</span>
-                        <progress id="song-progress" max="100" value="70">70%</progress>
-                        <span id="song-total-time">04:30</span>
+                        <span id="song-runtime" class="time">00:00</span>
+                        <input type="range" id="song-progress" min="0" max="100" value="0">
+                        <span id="song-total-time" class="time">04:30</span>
                     </div>
 
                     <div id="container-song-volume">
                         <button id="button-mute"><i class="bi bi-volume-up"></i></button>
-                        <input type="range"  id="volume-progress" max="100" value="50">
+                        <input type="range"  id="volume-range" min="0" max="100" value="100">
                     </div>
 
                     <div id="container-song-bottom-button-row">
@@ -93,10 +81,41 @@
 
         </div>
 
+        <div id="container-menu-modal" class="modal">
+
+            <div id="bg-modal-button-close">
+                <button id="modal-button-close"><i class="bi bi-x"></i></button>
+            </div>
+
+            <div id="container-playlist">
+
+                <div class="container-playlist-song">
+
+                    <img src="" alt="">
+                    <div class="playlist-song-info">
+                        <span class="playlist-song-title"></span>
+                        <span class="playlist-song-artist"></span>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+
+
 </body>
 
 </html>
